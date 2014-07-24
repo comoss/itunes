@@ -21,6 +21,7 @@ app.controller('mainCtrl', function($scope, itunesService){
         {field: 'AlbumArt', displayName: 'Album Art', width: '110px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><img src="{{row.getProperty(col.field)}}"></div>'},
         {field: 'Type', displayName: 'Type'},
         {field: 'CollectionPrice', displayName: 'Collection Price'},
+        {field:  'Explicit', displayName: 'Explicit Y/N'},
       ]
   };
 
@@ -55,7 +56,8 @@ app.controller('mainCtrl', function($scope, itunesService){
         Collection: song.collectionName,
         AlbumArt: song.artworkUrl100,
         Type: song.wrapperType, 
-        CollectionPrice: song.collectionPrice
+        CollectionPrice: song.collectionPrice,
+        Explicit: song.trackExplicitness
       }
     });
   }
